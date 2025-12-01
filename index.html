@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OS-APP — LP & UI Prototype</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Glassmorphism helper */
+    .glass {
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(8,15,30,0.08);
+    }
+    .iphone-frame{
+      border-radius: 28px;
+      box-shadow: 0 20px 40px rgba(2,6,23,0.25);
+      overflow: hidden;
+      border: 12px solid #f3f4f6;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(245,247,250,0.6));
+    }
+    /* simple reset for demo images */
+    .mock-img{ object-fit: cover; width:100%; height:100%; }
+  </style>
+</head>
+<body class="antialiased text-slate-800 bg-gradient-to-b from-sky-50 to-white min-h-screen">
+  <!-- Header -->
+  <header class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="w-10 h-10 rounded-xl bg-white glass flex items-center justify-center font-semibold">OS</div>
+      <div>
+        <h1 class="text-lg font-semibold">OS-APP</h1>
+        <p class="text-xs text-slate-500">釣果を共有する、新しいコミュニティ</p>
+      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+      <a href="#features" class="hover:underline">Features</a>
+      <a href="#ui" class="hover:underline">UI</a>
+      <a href="#cta" class="hover:underline">始める</a>
+      <button class="ml-4 px-4 py-2 rounded-md glass">App Store</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div class="py-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold">釣りの感動を、仲間とつなぐ。</h2>
+      <p class="mt-4 text-slate-600">写真と詳細情報で釣果を共有。フォロー、コメント、いいねで盛り上がろう。iPhone風の上品なUIで、誰でも簡単に投稿できます。</p>
+
+      <div class="mt-6 flex items-center gap-3">
+        <button class="px-5 py-3 rounded-full bg-sky-600 text-white shadow-lg">無料で始める</button>
+        <button class="px-4 py-3 rounded-full glass">詳細を見る</button>
+      </div>
+
+      <div class="mt-8 grid grid-cols-3 gap-3 sm:grid-cols-6">
+        <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=400&q=60" class="w-full h-20 rounded-lg object-cover" alt="fish1">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=60" class="w-full h-20 rounded-lg object-cover" alt="fish2">
+        <img src="https://images.unsplash.com/photo-1526481280698-9b2e0f6a7b6e?auto=format&fit=crop&w=400&q=60" class="w-full h-20 rounded-lg object-cover" alt="sea">
+        <img src="https://images.unsplash.com/photo-1500048993953-d4c9f1c3f3d4?auto=format&fit=crop&w=400&q=60" class="w-full h-20 rounded-lg object-cover" alt="boat">
+        <img src="https://images.unsplash.com/photo-1541872703-0a3c7f0a5f49?auto=format&fit=crop&w=400&q=60" class="w-full h-20 rounded-lg object-cover" alt="lure">
+        <img src="https://images.unsplash.com/photo-1529250583483-97c6d5a7c6da?auto=format&fit=crop&w=400&q=60" class="w-full h-20 rounded-lg object-cover" alt="sunset">
+      </div>
+    </div>
+
+    <!-- iPhone mock + UI preview -->
+    <div class="flex justify-center md:justify-end">
+      <div class="w-80 iphone-frame">
+        <div class="bg-white p-3">
+          <!-- top bar -->
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-full bg-slate-200"></div>
+            <div class="flex-1">
+              <div class="h-3 bg-slate-100 rounded-full w-24 mb-2"></div>
+              <div class="h-2 bg-slate-100 rounded-full w-16"></div>
+            </div>
+            <div class="w-6 h-6 bg-slate-100 rounded-full"></div>
+          </div>
+
+          <!-- feed -->
+          <div class="space-y-4">
+            <div class="rounded-lg overflow-hidden bg-slate-50">
+              <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=800&q=60" class="mock-img h-44" alt="post">
+              <div class="p-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-slate-200"></div>
+                    <div>
+                      <div class="text-sm font-semibold">yamada</div>
+                      <div class="text-xs text-slate-400">Sep 21 ・ Tokyo</div>
+                    </div>
+                  </div>
+                  <div class="text-sm text-slate-500">❤ 128</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-lg overflow-hidden bg-slate-50">
+              <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=60" class="mock-img h-44" alt="post2">
+              <div class="p-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-slate-200"></div>
+                    <div>
+                      <div class="text-sm font-semibold">sato</div>
+                      <div class="text-xs text-slate-400">Sep 19 ・ Osaka</div>
+                    </div>
+                  </div>
+                  <div class="text-sm text-slate-500">❤ 54</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="max-w-6xl mx-auto px-6 mt-12">
+    <h3 class="text-2xl font-bold mb-6">機能</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl glass">
+        <h4 class="font-semibold">釣果投稿</h4>
+        <p class="text-sm text-slate-600 mt-2">写真・釣り場・ルアー等の詳細を入力して投稿。シンプルなアップロードフロー。</p>
+      </div>
+      <div class="p-6 rounded-xl glass">
+        <h4 class="font-semibold">フォロー & コミュニティ</h4>
+        <p class="text-sm text-slate-600 mt-2">ユーザーをフォローしてタイムラインをカスタム。コメントやいいねで交流。</p>
+      </div>
+      <div class="p-6 rounded-xl glass">
+        <h4 class="font-semibold">プロフィール</h4>
+        <p class="text-sm text-slate-600 mt-2">自分の投稿一覧や自己紹介、編集機能を提供。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UI Showcase -->
+  <section id="ui" class="max-w-6xl mx-auto px-6 mt-12">
+    <h3 class="text-2xl font-bold mb-6">UI プロトタイプ</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Post detail mock -->
+      <div class="p-4 rounded-xl bg-white shadow">
+        <h5 class="font-semibold mb-3">投稿詳細</h5>
+        <div class="rounded-lg overflow-hidden bg-slate-50">
+          <img src="https://images.unsplash.com/photo-1505765053179-9b1b9d5d2c99?auto=format&fit=crop&w=800&q=60" class="mock-img h-48" alt="detail">
+          <div class="p-3">
+            <div class="text-lg font-semibold">大物ゲット！</div>
+            <p class="text-sm text-slate-600 mt-2">尺を超えるメバル。使用ルアー：X-Shadow。天候：晴れ。</p>
+            <div class="mt-3 flex items-center gap-4 text-sm text-slate-500">
+              <div>❤ 240</div>
+              <div>💬 34</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add post mock -->
+      <div class="p-4 rounded-xl bg-white shadow">
+        <h5 class="font-semibold mb-3">投稿追加フォーム</h5>
+        <form class="space-y-3 text-sm">
+          <input class="w-full p-3 rounded-lg border border-slate-100" placeholder="タイトル" />
+          <textarea class="w-full p-3 rounded-lg border border-slate-100" placeholder="本文"></textarea>
+          <div class="grid grid-cols-2 gap-2">
+            <input class="p-2 rounded-lg border" placeholder="釣り場" />
+            <input class="p-2 rounded-lg border" placeholder="魚種" />
+          </div>
+          <div class="flex justify-end">
+            <button class="px-4 py-2 rounded-full bg-sky-600 text-white">投稿する</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Profile mock -->
+      <div class="p-4 rounded-xl bg-white shadow">
+        <h5 class="font-semibold mb-3">アカウント</h5>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-16 h-16 rounded-full bg-slate-200"></div>
+          <div>
+            <div class="font-semibold">yamashita_shunya</div>
+            <div class="text-xs text-slate-500">釣り歴 8年 ・ いいね 1.2k</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          <div class="h-20 bg-slate-100 rounded"></div>
+          <div class="h-20 bg-slate-100 rounded"></div>
+          <div class="h-20 bg-slate-100 rounded"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Follow list (modal-like) -->
+  <section class="max-w-6xl mx-auto px-6 mt-12">
+    <h3 class="text-2xl font-bold mb-4">フォロー機能デモ</h3>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="p-4 rounded-xl bg-white shadow">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200"></div>
+            <div>
+              <div class="font-semibold">tanaka</div>
+              <div class="text-xs text-slate-400">釣り歴 3年</div>
+            </div>
+          </div>
+          <button class="px-3 py-1 rounded-full glass text-sm">フォロー</button>
+        </div>
+        <p class="text-sm text-slate-500">最近の投稿：クロダイ 42cm</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white shadow">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200"></div>
+            <div>
+              <div class="font-semibold">inoue</div>
+              <div class="text-xs text-slate-400">釣り歴 10年</div>
+            </div>
+          </div>
+          <button class="px-3 py-1 rounded-full glass text-sm">フォロー中</button>
+        </div>
+        <p class="text-sm text-slate-500">最近の投稿：アジング好調</p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-white shadow">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200"></div>
+            <div>
+              <div class="font-semibold">sasaki</div>
+              <div class="text-xs text-slate-400">釣り歴 5年</div>
+            </div>
+          </div>
+          <button class="px-3 py-1 rounded-full glass text-sm">フォロー</button>
+        </div>
+        <p class="text-sm text-slate-500">最近の投稿：青物ヒット！</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="max-w-6xl mx-auto px-6 mt-12 mb-20 text-center">
+    <div class="p-8 rounded-2xl glass inline-block">
+      <h4 class="text-xl font-semibold">今すぐ釣果を共有しよう</h4>
+      <p class="text-sm text-slate-600 mt-2">OS-APP で仲間とつながり、釣りの知見を増やそう。</p>
+      <div class="mt-4 flex justify-center gap-4">
+        <button class="px-6 py-3 rounded-full bg-sky-600 text-white">App Store</button>
+        <button class="px-6 py-3 rounded-full glass">Webで始める</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="max-w-6xl mx-auto px-6 py-8 border-t border-slate-100 text-sm text-slate-500">
+    <div class="flex flex-col md:flex-row justify-between">
+      <div>© 2025 OS-APP</div>
+      <div class="flex gap-4 mt-3 md:mt-0">
+        <a class="hover:underline">利用規約</a>
+        <a class="hover:underline">プライバシー</a>
+        <a class="hover:underline">お問い合わせ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small interactive script: toggle simulated views -->
+  <script>
+    // For demo purposes only: simple hash routing to scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
